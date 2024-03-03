@@ -8,10 +8,10 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                dir("TodoApp") {
-                    sh "python3 install -r requirements.txt"
-                    sh "python3 run.py"
-                }
+                
+                sh "python3 install -r requirements.txt"
+                sh "python3 run.py"
+                
             }
         }
     }
