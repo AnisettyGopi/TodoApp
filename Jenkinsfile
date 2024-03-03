@@ -1,22 +1,16 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
-                sh 'echo "Building..."'
-                // Add your build commands here
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'echo "Testing..."'
-                // Add your test commands here
+                git branch:"main" url:"https://github.com/AnisettyGopi/TodoApp.git"
             }
         }
         stage('Deploy') {
             steps {
-                sh 'echo "Deploying..."'
-                // Add your deployment commands here
+                dir("TodoApp") {
+                    sh "python run.py"
+                }
             }
         }
     }
