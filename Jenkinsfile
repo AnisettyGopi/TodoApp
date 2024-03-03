@@ -1,14 +1,23 @@
 pipeline {
-    agent any 
-
+    agent any
     stages {
-        stage("clone") {
+        stage('Build') {
             steps {
-                sh 'echo Cloning'
+                sh 'echo "Building..."'
+                // Add your build commands here
             }
         }
-        stage("build") {
-            steps 'echo Building'
+        stage('Test') {
+            steps {
+                sh 'echo "Testing..."'
+                // Add your test commands here
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'echo "Deploying..."'
+                // Add your deployment commands here
+            }
         }
     }
 }
