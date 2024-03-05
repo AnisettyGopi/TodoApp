@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: flask-app-container
-        image: anisettygopi/flask:v1
+        image: anisettygopi/flask:latest
         ports:
         - containerPort: 5000
 
